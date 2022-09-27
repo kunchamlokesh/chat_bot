@@ -1,0 +1,82 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: selected_option
+  examples: |
+    - [Finanical QA](options)
+    - [Recomendations](options)
+    - [Infra Requests](options)
+- intent: full_question
+  examples: |
+    - [what is block chain](question)
+    - [what is share price of lic](question)
+    - Define [block chain](question)
+    - Define [mortgage](question)
+    - [where is the First bond fund on sustainable cities in Asia a](question)
+- intent: infra_requests
+  examples: |
+    - [Raise a Incident](infra)
+    - [Inquiry Incident](infra)
+- intent: raise_Incident
+  examples: |
+    - Raise a Incident
+- intent: incident_info
+  examples: |
+    - [Unable to connect vpn](shortdescription)
+    - [Getting excpetion while connecting to the vpn](description)
+    - [unable to conect vpn](shortdescription)
+    - [vpn full description]{"entity": "description", "value": "Getting excpetion while connecting to the vpn"}
+    - [INC0010014](incidentid)
+    - [INC0010014](incidentid)
+- synonym: Getting excpetion while connecting to the vpn
+  examples: |
+    - vpn full description

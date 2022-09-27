@@ -1,0 +1,70 @@
+version: '2.0'
+
+stories:
+
+
+
+- story: happy path
+  steps:
+    - intent: greet
+    - action: utter_options
+    - intent: selected_option
+    - action: response_for_selection
+    - intent: full_question
+    - action: answer_the_question
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_options
+  - intent: selected_option
+    entities:
+    - options: Infra Requests
+  - slot_was_set:
+    - options: Infra Requests
+  - action: response_for_selection
+  - intent: infra_requests
+    entities:
+    - infra: Raise a Incident
+  - slot_was_set:
+    - infra: Raise a Incident
+  - action: raise_incident_form
+  - slot_was_set:
+    - requested_slot: shortdescription
+  - action: utter_ask_shortdescription
+  - intent: incident_info
+    entities:
+    - shortdescription: unable to conect vpn
+  - slot_was_set:
+      - requested_slot: description
+  - action: utter_ask_description
+  - intent: incident_info
+    entities:
+    - description: unable to conect vpn
+  - slot_was_set:
+    - description: unable to conect vpn
+  - action: action_submit
+
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_options
+  - intent: selected_option
+    entities:
+    - options: Infra Requests
+  - slot_was_set:
+    - options: Infra Requests
+  - action: response_for_selection
+  - intent: infra_requests
+    entities:
+    - infra: Inquiry Incident
+  - slot_was_set:
+    - infra: Inquiry Incident
+  - action: utter_ask_incidentid
+  - intent: incident_info
+    entities:
+    - incidentid: INC0010014
+  - slot_was_set:
+    - incidentid: INC0010014
+  - action: response_incident_status

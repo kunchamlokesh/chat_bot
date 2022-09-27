@@ -1,0 +1,13 @@
+<html>
+<body>
+  {% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+    <iframe class="center" src="http://localhost:5002/guest/conversations/production/aa5ecc2d94f94fbb814bc6a03ff8299f" width="100%" height="100%" frameborder="0"/>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">Please Login</a></li>
+   {% endif %}
+
+
+</body>
+</html>
