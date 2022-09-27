@@ -57,10 +57,26 @@ nlu:
     - [Infra Requests](options)
 - intent: full_question
   examples: |
-    - [what is block chain](question)
-    - [what is share price of lic](question)
-    - Define [block chain](question)
-    - Define [mortgage](question)
+    - [Define Selenium](question)
+    - [Define Chemical](question)
+    - [Define automation](question)
+    - [Define Histogram](question)
+    - [Define webdriver](question)
+    - [Define blockchain](question)
+    - [Define haircut](question)
+    - [Define Heavy Industry](question)
+    - [Define Hedge Fund](question)
+    - [Define Hobby Loss](question)
+    - [Define Hospital Revenue](question)
+    - [Define Hammering](question)
+    - [Define Handling](question)
+    - What is [share price of Adani Ports Sez Ltd](question)
+    - What is [share price of Bajaj Auto Ltd.](question)
+    - What is [share price of Hero Motocorp Ltd](question)
+    - What is [share price of Tata Motors Ltd](question)
+    - what is [share price of statestreet](question)
+    - what is [share price of Amazon](question)
+    - what is [share price of Google](question)
     - [where is the First bond fund on sustainable cities in Asia a](question)
 - intent: infra_requests
   examples: |
@@ -69,6 +85,7 @@ nlu:
 - intent: raise_Incident
   examples: |
     - Raise a Incident
+    - [Raise a Inciden](infra)
 - intent: incident_info
   examples: |
     - [Unable to connect vpn](shortdescription)
@@ -76,7 +93,10 @@ nlu:
     - [unable to conect vpn](shortdescription)
     - [vpn full description]{"entity": "description", "value": "Getting excpetion while connecting to the vpn"}
     - [INC0010014](incidentid)
-    - [INC0010014](incidentid)
+    - [vpn disconnected](shortdescription)
+    - [vpn](description) got [disconnected](shortdescription)
+    - [unable to connect vpn](shortdescription)
+    - [Getting excpetion while connecting to the vpn](description)
 - synonym: Getting excpetion while connecting to the vpn
   examples: |
     - vpn full description

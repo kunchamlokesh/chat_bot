@@ -77,11 +77,13 @@ class AnswerTheQuestion(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        question = tracker.get_slot("question")
+        # question = tracker.get_slot("question")
+        current_state = tracker.current_state()
+        question = current_state["latest_message"]["text"]
         print(question)
 
         ans = self.get_the_ans(question)
-        dispatcher.utter_message(text="Answer:" + ans)
+        dispatcher.utter_message(text=ans)
 
         return []
 
@@ -179,9 +181,9 @@ class GetIncidentStatus(Action):
         incidentid = tracker.get_slot("incidentid")
         res = self.get_incident_status(incidentid)
         if res == "No Record Found":
-            msg =  "Current status of incident {} is {}".format(incidentid,res)
-        else:
             msg = "No record found with incident id {} Please provide a valid ID".format(incidentid)
+        else:
+            msg = "Current status of incident {} is {}".format(incidentid, res)
         dispatcher.utter_message(msg)
 
 

@@ -45,6 +45,37 @@ stories:
     - description: unable to conect vpn
   - action: action_submit
 
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_options
+  - intent: selected_option
+    entities:
+    - options: Infra Requests
+  - slot_was_set:
+    - options: Infra Requests
+  - action: response_for_selection
+  - intent: infra_requests
+    entities:
+    - infra: Raise a Incident
+  - slot_was_set:
+    - infra: Raise a Incident
+  - action: raise_incident_form
+  - slot_was_set:
+    - requested_slot: shortdescription
+  - action: utter_ask_shortdescription
+  - intent: incident_info
+    entities:
+    - shortdescription: unable to connect vpn
+  - slot_was_set:
+    - shortdescription: unable to connect vpn
+  - action: utter_ask_description
+  - intent: incident_info
+    entities:
+    - description: Getting excpetion while connecting to the vpn
+  - slot_was_set:
+    - description: Getting excpetion while connecting to the vpn
+  - action: action_submit
 
 - story: interactive_story_2
   steps:

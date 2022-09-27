@@ -5,13 +5,13 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- infra_requests:
-    use_entities: true
-- incident_info:
+- greet:
     use_entities: true
 - selected_option:
     use_entities: true
-- greet:
+- infra_requests:
+    use_entities: true
+- incident_info:
     use_entities: true
 - inform:
     use_entities: true
@@ -60,10 +60,13 @@ slots:
     auto_fill: true
     influence_conversation: true
   infra:
-    type: rasa.shared.core.slots.TextSlot
+    type: rasa.shared.core.slots.CategoricalSlot
     initial_value: null
     auto_fill: true
     influence_conversation: true
+    values:
+    - raise a incident
+    - inquiry incident
   description:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
@@ -125,6 +128,7 @@ actions:
 - raise_incident_form
 - response_for_selection
 - response_incident_status
+- utter_ask_description
 - utter_ask_incidentid
 - utter_ask_shortdescription
 - utter_options
